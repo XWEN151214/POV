@@ -1,0 +1,47 @@
+/* General Styling */
+
+/* Imports */
+@import url(https://fonts.google.com/specimen/Playfair+Display+SC?query=playfair);
+@import url(https://fonts.google.com/specimen/Raleway?query=raleway);
+@import url(https://fonts.google.com/specimen/Asul?query=mons);
+
+html
+{
+    width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body
+{
+    width: 100%;
+    overflow-x: hidden;
+}
+
+:root
+{
+    --primary: #161616;
+    --primary-light: #ffff;
+    --secondary: #fdd22b;
+}
+
+h1, h2,
+h3, h4,
+h5, h6, p
+{
+    color: var(--primary-light);
+}
+
+a
+{
+    color: var(--primary-light);
+    text-decoration: none;
+}
+
+ul
+{
+    list-style-type: none;
+}
+
+
+
