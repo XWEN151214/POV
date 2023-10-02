@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 from .forms import CheckoutForm
-from .models import CartItem
+from .models import checkout
 
 def checkout(request):
     if request.method == 'POST':
@@ -23,5 +23,5 @@ def checkout(request):
             return render(request, 'success.html')
     else:
         form = CheckoutForm()
-    return render(request, 'checkout/checkout.html', {'form': form})
+    return render(request, 'checkout.html', {'form': form})
 
