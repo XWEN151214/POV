@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'checkout.apps.CheckoutConfig',
     'contact.apps.ContactConfig',
     'django.contrib.admin',
     'django.contrib.auth',
