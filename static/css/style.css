@@ -1,0 +1,250 @@
+/* General Styling */
+
+/* Imports */
+@import url(https://fonts.google.com/specimen/Playfair+Display+SC?query=playfair);
+@import url(https://fonts.google.com/specimen/Raleway?query=raleway);
+@import url(https://fonts.google.com/specimen/Asul?query=mons);
+
+html
+{
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body
+{
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+:root
+{
+    --primary: #161616;
+    --primary-light: #ffff;
+    --secondary: #fdd22b;
+}
+
+/* h1, h2,
+h3, h4,
+h5, h6, p
+{
+    color: var(--primary-light);
+} */
+
+a
+{
+    /* color: var(--primary-light); */
+    text-decoration: none;
+}
+
+ul
+{
+    list-style-type: none;
+}
+
+/* Nav bar */
+.navbar .row
+{   
+    display: flex;
+}
+
+.navbar .menu-items
+{
+    display: flex;
+}
+
+.navbar .hamburger-btn
+{
+    display: none;
+    position: absolute;
+    right: 1.5rem;
+}
+
+.navbar .hamburger-btn i
+{
+    font-size: 2rem;
+}
+
+.navbar .mobile-menu-items
+{
+    display: none;
+    position: fixed;
+    background-color: #000;
+    right: 0;
+    top: 0;
+    height: 100%;
+}
+
+.navbar .close-sidenav
+{
+    position: absolute;
+    right: 1rem;
+    top: 0.1rem;
+}
+
+.navbar .close-sidenav i
+{
+    color: #fff;
+}
+
+.navbar .mobile-menu-items .menu-item
+{
+    padding-right: 2rem;
+}
+
+.navbar .cart-icon
+{
+    position: absolute;
+    right: 2rem;
+}
+
+.navbar .cart-icon i
+{
+    font-size: 2rem;
+}
+
+@media screen and (max-width: 425px)
+{
+    .navbar .menu-items
+    {
+        display: none;
+    }
+
+    .navbar .cart-icon
+    {
+        display: none;
+    }
+
+    .navbar .hamburger-btn
+    {
+        display: block;
+    }
+}
+
+/* carouserl */
+
+.carousel .slides
+{
+    height: 25rem;
+}
+
+.carousel .slides:nth-child(2),
+.carousel .slides:nth-child(3)
+{
+    display: none;
+}
+
+.carousel .slide-controllers
+{
+    position: absolute;
+    top: 10rem;
+}
+
+.carousel .slide-controllers .right
+{
+    position: absolute;
+    right: 1.5rem;
+}
+
+.carousel .slide-controllers .left
+{
+    position: absolute;
+    left: 1.5rem;
+}
+
+.carousel .slide-controllers i
+{
+    font-size: 2rem;
+}
+
+/* auth */
+.auth
+{
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 10;
+}
+
+.auth .auth-container
+{
+    border: 2px #000 solid;
+    border-radius: 10px;
+    width: 20rem;
+    position: fixed;
+    top: 10rem;
+}
+
+.auth .form-container
+{
+    width: 100%;
+}
+
+.auth .login
+{
+    display: none;
+}
+
+/* cart-detail */
+
+.cart-detail .product-detail img
+{
+    width: 10rem;
+    height: 10rem;
+}
+
+.cart-detail .product-detail p
+{
+    font-weight: bold;
+}
+
+.cart-detail .product-detail i
+{
+    font-size: 1.5rem;
+}
+
+/* product-list */
+.product-list .product-row
+{
+    display: flex;
+}
+
+.product-list .product-box
+{
+    border: 2px #000 solid;
+}
+
+.product-list .product-box img
+{
+    height: 15rem;
+    width: 15rem;
+}
+
+.product-list .product-box p
+{
+    font-weight: 700;
+}
+
+/* category-list */
+.category-list .category p
+{
+    font-weight: 700;
+}
+
+/* contact-form */
+footer .contact-form textarea
+{
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,66 @@
+<!-- mobile-nav script -->
+<script>
+    let slide_idx = 0;
+    let slides = document.getElementsByClassName('slides');
+
+    function toggleElement(id, propertyValue)
+    {
+        let ele = document.getElementById(id); 
+        if(ele.style.display === 'none' || ele.style.display === '')
+        {
+            ele.style.display = propertyValue;
+        }
+        else
+        {
+            ele.style.display = 'none';
+        }
+    }
+
+    function next()
+    {
+        if(slide_idx != slides.length - 1)
+        {
+            slides[slide_idx].style.display = 'none';
+            slide_idx++;
+            slides[slide_idx].style.display = 'block'
+        }
+        else
+        {
+            slides[slide_idx].style.display = 'none';
+            slide_idx = 0;
+            slides[slide_idx].style.display = 'block'
+        }
+    } 
+
+    function prev()
+    {
+        if(slide_idx != 0)
+        {
+            slides[slide_idx].style.display = 'none';
+            slide_idx--;
+            slides[slide_idx].style.display = 'block'
+        }
+        else
+        {
+            slides[slide_idx].style.display = 'none';
+            slide_idx = slides.length - 1;
+            slides[slide_idx].style.display = 'block'
+        }
+    }
+
+    function showAuthForms()
+    {
+        let login_form = document.getElementById('login-form');
+        let signup_form = document.getElementById('signup-form');
+        if(login_form.style.display === 'none' || login_form.style.display === '')
+        {
+            login_form.style.display = 'flex';
+            signup_form.style.display = 'none';
+        }
+        else
+        {
+            signup_form.style.display = 'flex';
+            login_form.style.display = 'none';
+        }
+    }
+</script>

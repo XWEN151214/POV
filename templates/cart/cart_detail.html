@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="cart-detail">
+        <div class="cart-content container-flex justify-content-center align-items-center">
+            <h3 class="text-center py-2">Your Cart</h3>
+            <div class="row py-4 mt-2">
+                {% for product in cart.products.all %}
+                   <div class="product-detail container d-flex justify-content-center align-items-center">
+                        <div class="col-lg-3">
+                            <img src="../{{product.image.url}}">
+                        </div>
+                        <div class="col-lg-3">
+                            <p class="pt-2">{{product.title}}</p>
+                        </div>
+                        <div class="col-lg-3">
+                            <p class="pt-2">{{product.price}}</p>
+                        </div>
+                        <div class="col-lg-3">
+                            <a href="../product/remove/{{product.pk}}">
+                                <i class="fa fa-trash"></i>
+                            </a>
+                        </div>
+                   </div><!-- end product-detail -->
+                {% endfor %}
+            </div>
+        </div><!-- end cart-content -->
+</section><!-- end cart-detail -->
+{% endblock %}

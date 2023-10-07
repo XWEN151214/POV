@@ -1,0 +1,46 @@
+<section class="navbar">
+    <div class="row align-items-center py-2 mt-2">
+        <div class="logo-container px-3">
+            <h2 class="logo-text">POV</h2>
+        </div>
+        <ul class="menu-items justify-content-center align-items-center p-0 m-0 mx-5">
+            <li class="menu-item mx-2">
+                <a class="menu-link link" href="#">Home</a>
+            </li>
+            <li class="menu-item mx-2">
+                <a class="menu-link link" href="#">Categories</a>
+            </li>
+            <li class="menu-item mx-2">
+                <a class="menu-link link" href="#">Contact us</a>
+            </li>
+        </ul><!-- end menu-items -->
+        <div class="hamburger-btn">
+            <i class="fa fa-bars" id="menu-btn" onclick="toggleElement('mobile-nav', 'block')"></i>
+        </div>
+        <ul class="mobile-menu-items" id="mobile-nav">
+            <div class="container py-2">
+                <div class="close-sidenav">
+                    <i class="fa fa-close" onclick="toggleElement('mobile-nav', 'block')"></i>
+                </div>
+            </div>
+            <li class="menu-item py-2">
+                <a class="menu-link link" href="#">Home</a>
+            </li>
+            <li class="menu-item py-2">
+                <a class="menu-link link" href="#">Categories</a>
+            </li>
+            <li class="menu-item py-2">
+                <a class="menu-link link" href="#">Contact us</a>
+            </li>
+        </ul>
+        <div class="cart-icon">
+            {% if user.is_authenticated %}
+            <a href="../cart/detail">
+                <i class="fa fa-shopping-cart"></i>
+            </a>
+            {% else %}
+                <a href="#" onclick="toggleElement('auth-forms', 'flex')">Register</a>
+            {% endif %}
+        </div>
+    </div><!-- end container-->
+</section><!-- end navbar -->

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+        <h1>Detail</h1>
+        {{product.title}}
+        {{product.category}}
+        {{product.price}}
+        <a href="/products/add/{{product.pk}}">Add</a>
+{% endblock %}
