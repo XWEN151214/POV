@@ -69,7 +69,8 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'user.context_processors.get_user_forms',
-                'contact.context_processors.get_contact_form'
+                'contact.context_processors.get_contact_form',
+                'cart.context_processors.get_checkout_form'
             ],
         },
     },
@@ -135,4 +136,10 @@ STATICFILES_DIRS = [BASE_DIR, 'static']
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+
+EMAIL_HOST_USER = '2105f305204dea'
+
+EMAIL_HOST_PASSWORD = '17cbe007545c56'
+
+EMAIL_PORT = '2525'

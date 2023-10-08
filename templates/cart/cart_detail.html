@@ -8,16 +8,23 @@
             <div class="row py-4 mt-2">
                 {% for product in cart.products.all %}
                    <div class="product-detail container d-flex justify-content-center align-items-center">
-                        <div class="col-lg-3">
+                        <div class="col-lg-3 mx-2">
                             <img src="../{{product.image.url}}">
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col-lg-2">
                             <p class="pt-2">{{product.title}}</p>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col-lg-2">
                             <p class="pt-2">{{product.price}}</p>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col-lg-2">
+                            <div class="counter container">
+                                <button class="incre">+</button>
+                                <input class="quantity" id="{{product.id}}" type="number" value="0">
+                                <button class="decre">-</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
                             <a href="../product/remove/{{product.pk}}">
                                 <i class="fa fa-trash"></i>
                             </a>
@@ -25,6 +32,33 @@
                    </div><!-- end product-detail -->
                 {% endfor %}
             </div>
+            <div class="checkout-btn row py-2">
+                <button type="button" value="checkout" onclick="toggleElement('checkout', 'block')">Checkout</button>
+            </div>
         </div><!-- end cart-content -->
+        <section class="checkout" id="checkout">
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="container-flex d-flex justify-content-center align-items-center">
+                    <form class="p-2" method="post" id="checkout_form">{% csrf_token %}
+                        <div class="col-lg-6">
+                            <p class="form-label pt-2">Email</p>
+                            {{checkout_form.email}}
+                        </div>
+                        <div class="col-lg-6">
+                            <p class="form-label pt-2">Address</p>
+                            {{checkout_form.address}}
+                        </div>
+                        <div class="col-lg-6">
+                            <p class="form-label pt-2">Specific Details</p>
+                            {{checkout_form.specific_details}}
+                        </div>
+                        <div class="col-lg-6 py-2">
+                            <button type="submit" value="submit" onclick="getCheckoutUrl()">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
 </section><!-- end cart-detail -->
 {% endblock %}
+

@@ -1,7 +1,9 @@
-<!-- mobile-nav script -->
+<!-- scripts -->
 <script>
     let slide_idx = 0;
+    let quantity_idx = 0;
     let slides = document.getElementsByClassName('slides');
+    let quantity = document.getElementsByClassName('quantity');
 
     function toggleElement(id, propertyValue)
     {
@@ -63,4 +65,52 @@
             login_form.style.display = 'none';
         }
     }
+
+    function updateCounter()
+    {
+        let incre = document.getElementsByClassName('incre');
+        let decre = document.getElementsByClassName('decre');
+        for(let i=0; i<incre.length; i++)
+        {
+            incre[i].addEventListener
+            (
+                'click',
+                () =>
+                {
+                    quantity[i].value++;
+                }
+            )
+        }
+        for(let i=0; i<decre.length; i++)
+        {
+            decre[i].addEventListener
+            (
+                'click',
+                () =>
+                {
+                    if(quantity[i].value != 0)
+                    {
+                        quantity[i].value--;
+                    }
+                }
+            )
+        }
+    }
+
+    function getCheckoutUrl()
+    {
+        let form = document.getElementById('checkout_form');
+        let urlString = `{% url 'cart:checkout' %}?`;
+        for(let i=0; i<quantity.length; i++)
+        {
+            urlString += quantity[i].value;
+            if(i < quantity.length - 1)
+            {
+                urlString += ',';
+            }
+        }
+        form.action = urlString;
+    }
+
+    updateCounter()
 </script>

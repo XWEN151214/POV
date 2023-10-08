@@ -196,6 +196,11 @@ ul
     height: 10rem;
 }
 
+.cart-detail .cart-content
+{
+    position: relative;
+}
+
 .cart-detail .product-detail p
 {
     font-weight: bold;
@@ -204,6 +209,39 @@ ul
 .cart-detail .product-detail i
 {
     font-size: 1.5rem;
+}
+
+.cart-detail .product-detail .counter .quantity
+{
+    width: 2rem;
+}
+
+.cart-detail .checkout-btn
+{
+    position: absolute;
+    right: 2rem;
+    bottom: 2rem;
+}
+
+.checkout 
+{
+    width: 100%;
+    display: none;
+}
+
+.checkout .row
+{
+    position: fixed;
+    top: 5rem;
+    width: 100%;
+    z-index: 9;
+}
+
+.checkout .container-flex
+{
+    width: 23rem;
+    border: 2px #000 solid;
+    border-radius: 4px;
 }
 
 /* product-list */
