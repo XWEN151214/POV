@@ -17,7 +17,6 @@ class CartForm(forms.ModelForm):
 
 class CheckoutForm(forms.Form):
 
-    name = forms.CharField(max_length=100)
     email = forms.EmailField(max_length=100)
     address = forms.CharField(max_length=255)
-    cart_items = forms.CharField(widget=forms.Textarea())
+    specific_details = forms.CharField(widget=forms.Textarea(), required=False)
