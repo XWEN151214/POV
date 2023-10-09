@@ -20,6 +20,15 @@ body
     overflow-x: hidden;
 }
 
+/* @media screen and (max-width: 2560px) and (min-width: 2000px)
+{
+    html
+    {
+        padding-left: 20rem;
+        padding-right: 20rem;
+    } 
+} */
+
 :root
 {
     --primary: #161616;
@@ -124,6 +133,20 @@ ul
     }
 }
 
+@media screen and (max-width: 2560px) and (min-width: 2000px)
+{
+    .navbar .row
+    {
+        padding-left: 18rem;
+        padding-right: 18rem;
+    }
+
+    .navbar .cart-icon
+    {
+        right: 10rem;
+    }
+}
+
 /* carouserl */
 
 .carousel .slides
@@ -139,8 +162,8 @@ ul
 
 .carousel .slide-controllers
 {
-    position: absolute;
-    top: 10rem;
+    position: relative;
+    top: -10rem;
 }
 
 .carousel .slide-controllers .right
@@ -158,6 +181,16 @@ ul
 .carousel .slide-controllers i
 {
     font-size: 2rem;
+}
+
+@media screen and (max-width: 2560px) and (min-width: 2000px)
+{
+    .carousel .slides,
+    .carousel .slide-controllers
+    {
+        padding-left: 18rem;
+        padding-right: 18rem;
+    }
 }
 
 /* auth */
@@ -272,10 +305,208 @@ ul
     font-weight: 700;
 }
 
+.category-list .row
+{
+    display: flex;
+}
+
+@media screen and (max-width: 375px)
+{
+    .category-list .row
+    {
+        display: inline;
+    }
+}
+
+/* About us */
+
+.about-us .about-image img
+{
+    width: 25rem;
+    height: 20rem;
+}
+
+.about-us .row
+{
+    display: flex;
+}
+
+.about-us .row div
+{
+    width: 50%;
+}
+
+.about-us #about-image-2
+{
+    justify-content: right;
+    position: relative;
+    top: -3rem;
+}
+
+@media screen and (max-width: 768px)
+{
+    .about-us .about-image img
+    {
+        width: 18rem;
+        height: 13rem;
+    }
+
+    .about-us .row
+    {
+        align-items: center;
+    }
+
+    .about-us #about-image-2
+    {
+        top: 0;
+    }
+}
+
+@media screen and (max-width: 425px)
+{
+    .about-us .about-image img
+    {
+        width: 23rem;
+        height: 18rem;
+    }
+
+    .about-us .row:nth-child(1)
+    {
+        flex-direction: column;
+    }
+
+    .about-us .row:nth-child(2)
+    {
+        flex-direction: column-reverse;
+    }
+
+    .about-us .about-text
+    {
+        min-width: 100%;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .about-us .about-text p,
+    .about-us .about-text h2
+    {
+       padding-left: 2rem;
+       padding-right: 2rem;
+    }
+
+    .about-us #about-image-2
+    {
+        justify-content: center;
+    }
+}
+
+/* services */
+
+.services
+{
+    background-color: var(--primary);
+}
+
+.services h2
+{
+    color: var(--primary-light);
+}
+
+.services .box-container
+{
+    display: flex;
+}
+
+.services .service-box
+{
+    flex-direction: column;
+    border-radius: 5px;
+    width: 20rem;
+    background-color: var(--primary-light);
+}
+
+.services .service-box .service-image
+{
+    border-radius: 100%;
+    width: 18%;
+    background-color: var(--primary);
+}
+
+.services .service-box .service-image i
+{
+    font-size: 2rem;
+    color: var(--primary-light);
+}
+
+@media screen and (max-width: 768px) 
+{
+    .services .service-box
+    {
+        min-width: 14rem;
+    }
+
+    .services .service-box .service-image
+    {
+        width: 22%;
+    }
+}
+
+@media screen and (max-width: 425px) 
+{
+    .services .box-container
+    {
+        flex-direction: column;
+    }
+
+    .services .service-box:nth-child(2),
+    .services .service-box:nth-child(3)
+    {
+        margin-top: 3rem;
+    }
+
+    .services .service-box .service-image
+    {
+        width: 18%;
+    }
+}
+
+@media screen and (max-width: 320px)
+{
+    .services .service-box
+    {
+        width: 18rem;
+    }
+} 
+
 /* contact-form */
 footer .contact-form textarea
 {
-    width: 100%;
+    border-width: 1px;
+    border-radius: 5px;
+    outline: none;
+    width: 20rem;
+    text-indent: 2px;
+}
+
+footer .contact-form input
+{   
+    border-radius: 5px;
+    border-width: 1px;
+    outline: none;
+    width: 20rem;
+    text-indent: 2px;
+}
+
+@media screen and (max-width: 2560px) and (min-width: 2000px)
+{
+   footer .row
+   {
+    padding-left: 18rem;
+    padding-right: 18rem;
+   }
 }
 
 
