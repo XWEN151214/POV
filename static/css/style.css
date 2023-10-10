@@ -1,4 +1,749 @@
-h1
+/* General Styling */
+
+/* Imports */
+@import url(https://fonts.google.com/specimen/Playfair+Display+SC?query=playfair);
+@import url(https://fonts.google.com/specimen/Raleway?query=raleway);
+@import url(https://fonts.google.com/specimen/Asul?query=mons);
+
+html
 {
-    color:rgb(255, 145, 0)
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
+
+body
+{
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    background-color: var(--primary);
+}
+
+:root
+{
+    --primary: #161616;
+    --primary-light: #ffff;
+    --secondary: #fdd22b;
+    --tertiary: #2c2c2c;
+}
+
+h1, h2,
+h3, h4,
+h5, h6, p
+{
+    color: var(--primary-light);
+}
+
+a
+{
+    color: var(--primary-light);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+p
+{
+    font-weight: 500;
+}
+
+a:hover
+{
+    color: var(--primary-light);
+    text-decoration: none;
+}
+
+ul
+{
+    list-style-type: none;
+}
+
+.btn
+{
+    background-color: var(--secondary);
+    color: var(--primary);
+}
+
+.btn:hover
+{
+    background-color: var(--tertiary);
+    transition: 0.5s;
+    color: var(--primary-light)
+}
+
+.btn a
+{
+    color: var(--primary);
+}
+
+.btn:hover a
+{
+    color: var(--primary-light);
+}
+
+/* Nav bar */
+.navbar
+{
+    background-color: var(--primary);
+}
+
+.navbar .row
+{   
+    display: flex;
+}
+
+.navbar .menu-items
+{
+    display: flex;
+}
+
+.navbar .hamburger-btn
+{
+    display: none;
+    position: absolute;
+    right: 1.5rem;
+}
+
+.navbar .hamburger-btn i
+{
+    font-size: 2rem;
+    color: var(--primary-light);
+}
+
+.navbar .mobile-menu-items
+{
+    display: none;
+    position: fixed;
+    background-color: #000;
+    right: 0;
+    top: 0;
+    height: 100%;
+    z-index: 10;
+}
+
+.navbar .close-sidenav
+{
+    position: absolute;
+    right: 1rem;
+    top: 0.1rem;
+}
+
+.navbar .close-sidenav i
+{
+    color: #fff;
+}
+
+.navbar .mobile-menu-items .menu-item
+{
+    padding-right: 2rem;
+}
+
+.navbar .cart-icon
+{
+    position: absolute;
+    right: 2rem;
+}
+
+.navbar .cart-icon i
+{
+    font-size: 2rem;
+}
+
+.navbar .cart-icon i:hover
+{
+    color: var(--secondary);
+}
+
+@media screen and (max-width: 425px)
+{
+    .navbar .menu-items
+    {
+        display: none;
+    }
+
+    .navbar .cart-icon
+    {
+        display: none;
+    }
+
+    .navbar .hamburger-btn
+    {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 2560px) and (min-width: 2000px)
+{
+    .navbar .row
+    {
+        padding-left: 18rem;
+        padding-right: 18rem;
+    }
+
+    .navbar .cart-icon
+    {
+        right: 10rem;
+    }
+}
+
+/* carouserl */
+
+.carousel .container-flex
+{
+    background-color: #000000a9;
+    height: 100%;
+}
+
+.carousel .slides
+{
+    height: 35rem;
+    background-size: cover;
+}
+
+.carousel #slide-1
+{
+    background-image: url(../images/hood_model2.jpg);
+}
+
+.carousel #slide-2
+{
+    background-image: url(../images/cover-1.png);
+}
+
+.carousel #slide-3
+{
+    background-image: url(../images/cover-2.png);
+}
+
+.carousel .slides:nth-child(2),
+.carousel .slides:nth-child(3)
+{
+    display: none;
+}
+
+.carousel .slide-controllers
+{
+    position: relative;
+    top: -10rem;
+}
+
+.carousel .slide-controllers .right
+{
+    position: absolute;
+    right: 1.5rem;
+}
+
+.carousel .slide-controllers .left
+{
+    position: absolute;
+    left: 1.5rem;
+}
+
+.carousel .slide-controllers i
+{
+    font-size: 2rem;
+    color: var(--primary-light)
+}
+
+@media screen and (max-width: 2560px) and (min-width: 2000px)
+{
+    .carousel .slides,
+    .carousel .slide-controllers
+    {
+        padding-left: 18rem;
+        padding-right: 18rem;
+    }
+}
+
+/* auth */
+.auth
+{
+    width: 100%;
+    display: none;
+}
+
+.auth .auth-container
+{
+    background-color: var(--primary);
+    border-radius: 10px;
+    width: 25rem;
+    position: fixed;
+    top: 10rem;
+    z-index: 10;
+}
+
+.auth .form-container
+{
+    width: 100%;
+}
+
+.auth .login
+{
+    display: none;
+}
+
+/* cart-detail */
+
+.cart-detail
+{
+    background-color: var(--primary-light);
+}
+
+.cart-detail .product-detail img
+{
+    width: 10rem;
+    height: 10rem;
+}
+
+.cart-detail .cart-content
+{
+    position: relative;
+}
+
+.cart-detail h3,
+.cart-detail p,
+.cart-detail h5
+{
+    color: var(--primary);
+}
+
+.cart-detail .product-detail p
+{
+    font-weight: bold;
+}
+
+.cart-detail .product-detail i
+{
+    font-size: 1.5rem;
+}
+
+.cart-detail .product-detail .counter .quantity
+{
+    width: 2rem;
+}
+
+.cart-detail .checkout-btn
+{
+    position: absolute;
+    right: 2rem;
+    bottom: 2rem;
+}
+
+.cart-detail .counter .btn
+{
+    width: 2rem;
+}
+
+.checkout 
+{
+    width: 100%;
+    display: none;
+}
+
+.checkout .row
+{
+    top: 5rem;
+    width: 100%;
+    z-index: 9;
+    position: fixed;
+}
+
+.checkout .container-flex
+{
+    position: relative;
+    width: 23rem;
+    background-color: var(--primary);
+    border-radius: 4px;
+}
+
+/* product-list */
+.product-list
+{
+    background-color: var(--primary-light);
+}
+
+.product-list .product-row
+{
+    display: flex;
+}
+
+.product-list .product-box
+{
+    background-color: #f8f7f7;
+}
+
+.product-list .product-box img
+{
+    height: 15rem;
+    width: 15rem;
+}
+
+.product-list h3
+{
+    color: var(--primary);
+}
+
+.product-list .product-box p
+{
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.product-list .product-box button
+{
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* category-list */
+
+.category-list .category
+{
+    background-color: var(--tertiary);
+    border-radius: 10px;
+    min-width: 15rem;
+    max-width: 15rem;
+    background-size: cover;
+}
+
+.category-list .category:hover
+{
+    transition: 0.5s;
+}
+
+.category-list .category:nth-child(1):hover
+{
+    background-image: url(../images/r_neck_2.jpg);
+}
+
+.category-list .category:nth-child(2):hover
+{
+    background-image: url(../images/mugs_3.png);
+}
+
+.category-list .category:nth-child(3):hover
+{
+    background-image: url(../images/pamphlet3.jpg);
+}
+
+.category-list .category:hover .container-flex
+{
+    background-color: #0000003d;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.category-list .category p
+{
+    font-weight: 700;
+}
+
+.category-list .row
+{
+    display: flex;
+}
+
+@media screen and (max-width: 375px)
+{
+    .category-list .row
+    {
+        display: inline;
+    }
+}
+
+/* About us */
+
+.about-us .about-image img
+{
+    width: 25rem;
+    height: 20rem;
+}
+
+.about-us .row
+{
+    display: flex;
+}
+
+.about-us .row div
+{
+    width: 50%;
+}
+
+.about-us #about-image-2
+{
+    justify-content: right;
+    position: relative;
+    top: -3rem;
+}
+
+@media screen and (max-width: 768px)
+{
+    .about-us .about-image img
+    {
+        width: 18rem;
+        height: 13rem;
+    }
+
+    .about-us .row
+    {
+        align-items: center;
+    }
+
+    .about-us #about-image-2
+    {
+        top: 0;
+    }
+}
+
+@media screen and (max-width: 425px)
+{
+    .about-us .about-image img
+    {
+        width: 23rem;
+        height: 18rem;
+    }
+
+    .about-us .row:nth-child(1)
+    {
+        flex-direction: column;
+    }
+
+    .about-us .row:nth-child(2)
+    {
+        flex-direction: column-reverse;
+    }
+
+    .about-us .about-text
+    {
+        min-width: 100%;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .about-us .about-text p,
+    .about-us .about-text h2
+    {
+       padding-left: 2rem;
+       padding-right: 2rem;
+    }
+
+    .about-us #about-image-2
+    {
+        justify-content: center;
+    }
+}
+
+/* services */
+
+.services
+{
+    background-color: var(--primary);
+
+}
+
+.services h2
+{
+    color: var(--primary-light);
+}
+
+.services .box-container
+{
+    display: flex;
+}
+
+.services .service-box
+{
+    flex-direction: column;
+    border-radius: 5px;
+    width: 20rem;
+    background-color: var(--primary-light);
+}
+
+.services .service-box h3,
+.services .service-box p
+{
+    color: var(--primary);
+}
+
+.services .service-box .service-image
+{
+    border-radius: 100%;
+    width: 18%;
+    background-color: var(--primary);
+}
+
+.services .service-box .service-image i
+{
+    font-size: 2rem;
+    color: var(--primary-light);
+}
+
+@media screen and (max-width: 768px) 
+{
+    .services .service-box
+    {
+        min-width: 14rem;
+    }
+
+    .services .service-box .service-image
+    {
+        width: 22%;
+    }
+}
+
+@media screen and (max-width: 425px) 
+{
+    .services .box-container
+    {
+        flex-direction: column;
+    }
+
+    .services .service-box:nth-child(2),
+    .services .service-box:nth-child(3)
+    {
+        margin-top: 3rem;
+    }
+
+    .services .service-box .service-image
+    {
+        width: 18%;
+    }
+}
+
+@media screen and (max-width: 320px)
+{
+    .services .service-box
+    {
+        width: 18rem;
+    }
+} 
+
+/* product-detail */
+.product .product-image img
+{
+    width: 20rem;
+}
+
+.product .container-flex
+{
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 425px)
+{
+  .product .container
+  {
+    flex-direction: column;
+  }
+
+  .product .container .product-image
+  {
+    display: flex;
+    justify-content: center;
+  }
+
+  .product .container .product-detail
+  {
+    margin-top: 2rem;
+  }
+}
+
+/* close */
+.close
+{
+    position: absolute;
+    right: 1rem;
+    top: 0;
+}
+
+.close i
+{
+    color: var(--primary-light);
+}
+
+/* form */
+form textarea
+{
+    background-color: var(--tertiary);
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: var(--tertiary);
+    outline: none;
+    width: 20rem;
+    text-indent: 2px;
+}
+
+form input
+{   
+    background-color: var(--tertiary);
+    border-radius: 5px;
+    border-width: 0;
+    border-color: var(--tertiary);
+    outline: none;
+    width: 20rem;
+    text-indent: 2px;
+    padding-bottom: 0.6rem;
+}
+
+/* contact-form */
+footer
+{
+    background-color: var(--primary);
+}
+
+footer .contact-info
+{
+    margin-top: 2rem;
+}
+
+footer .quick-links
+{
+    background-color: var(--tertiary);
+}
+
+footer .social-icons .social-link
+{
+    background-color: var(--tertiary);
+    border-radius: 100%;
+    width: 2.5rem;
+}
+
+footer .social-icons .social-link:hover
+{
+    background-color: var(--secondary);
+    transition: 0.5s;
+}
+
+footer .social-icons i
+{
+    font-size: 1.5rem;
+}
+
+footer .social-icons .social-link:hover i
+{
+    color: var(--primary)
+}
+
+@media screen and (max-width: 2560px) and (min-width: 2000px)
+{
+   footer .row
+   {
+    padding-left: 18rem;
+    padding-right: 18rem;
+   }
+}
+
+
+
+
+
+
+
+
+

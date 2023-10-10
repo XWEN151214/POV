@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Custom Apps
     'products',
-    'cart'
+    'cart',
+    'contact',
+    'user'
 ]
 
 MIDDLEWARE = [
@@ -66,6 +68,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'user.context_processors.get_user_forms',
+                'contact.context_processors.get_contact_form',
+                'cart.context_processors.get_checkout_form'
             ],
         },
     },
@@ -115,6 +120,9 @@ USE_I18N = True
 
 USE_TZ = True
 
+MEDIA_URL = 'media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, '/CodingProjects/GitRepositories/XWEN/POV/media/')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
@@ -128,4 +136,10 @@ STATICFILES_DIRS = [BASE_DIR, 'static']
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+
+EMAIL_HOST_USER = '2105f305204dea'
+
+EMAIL_HOST_PASSWORD = '17cbe007545c56'
+
+EMAIL_PORT = '2525'
