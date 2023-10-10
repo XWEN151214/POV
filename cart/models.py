@@ -9,15 +9,13 @@ class Cart(models.Model):
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     products  = models.ManyToManyField(Product)
-    quantity = models.IntegerField(default=0)
-    
 
-    @property
     def total(self):
         
         total = 0
         for product in self.products.all():
-            total += product.price * self.quantity
+            total += product.price
+        print(total)
         return total
 
 
