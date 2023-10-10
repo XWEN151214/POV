@@ -3,12 +3,12 @@
 {% block content %}
     {% include '../carousel.html' %}
     <section class="category-list">
-        <h3 class="text-center py-2">Categories</h3>
-        <div class="row justify-content-center py-4 mt-4">
+        <h3 class="text-center py-2 mt-2">Categories</h3>
+        <div class="row justify-content-center py-4 my-4">
             {% for category in object_list %}
-                <a class="category" href="list/{{category.pk}}">
-                    <div class="category col-lg-12">
-                        <div class="container">
+                <a class="category mx-3" href="list/{{category.pk}}">
+                    <div class="container-flex py-2">
+                        <div class="container mt-2">
                             <p class="text-center py-2">{{category.name}}</p>
                         </div>
                     </div>
@@ -17,7 +17,7 @@
         </div>
     </section><!-- end category-list -->
     <section class="about-us">
-       <div class="about-us-bg container-flex p-0 m-0">
+       <div class="about-us-bg container-flex p-0 mt-4">
            <div class="about-us-cover container-flex py-2">
                 <div class="container">
                     <div class="row justify-content-center py-0">
