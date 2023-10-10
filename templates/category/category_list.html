@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
     {% include '../carousel.html' %}
-    <section class="category-list">
+    <section class="category-list" id="categories">
         <h3 class="text-center py-2 mt-2">Categories</h3>
         <div class="row justify-content-center py-4 my-4">
             {% for category in object_list %}

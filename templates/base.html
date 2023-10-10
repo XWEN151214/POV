@@ -75,27 +75,29 @@
         </section><!-- end auth -->
     </body>
     <footer>
-        <div class="row py-4">
+        <section class="row py-4" id="contact">
             <div class="col-lg-6">
                 <div class="contact-form container-flex">
                     <h3 class="text-center py-2">Contact Us</h3>
-                    <form method="post" action="{% url 'contact:mail' %}">{% csrf_token %}
-                        <div class="col-lg-12 mx-5 py-3">
-                            {{contact_form.name}}
-                        </div>
-                        <div class="col-lg-3 mx-5 PY-3">
-                            {{contact_form.email}}
-                        </div>
-                        <div class="col-lg-3 mx-5 py-3">
-                            {{contact_form.message}}
-                        </div>
-                        <div class="col-lg-3 mx-5 py-2">
-                            <button class="btn" type="submit" value="submit">Submit</button>
-                        </div>
-                    </form> 
+                    <div class="contact">
+                        <form method="post" action="{% url 'contact:mail' %}">{% csrf_token %}
+                            <div class="col-lg-12 mx-5 py-3">
+                                {{contact_form.name}}
+                            </div>
+                            <div class="col-lg-3 mx-5 PY-3">
+                                {{contact_form.email}}
+                            </div>
+                            <div class="col-lg-3 mx-5 py-3">
+                                {{contact_form.message}}
+                            </div>
+                            <div class="col-lg-3 mx-5 py-2 submit-button">
+                                <button class="btn" type="submit" value="submit">Submit</button>
+                            </div>
+                        </form> 
+                    </div>
                 </div><!-- end contact-form -->
             </div><!-- end col-lg-6 -->
-            <div class="contact-info col-lg-6">
+            <div class="contact-info col-lg-6 my-4">
                 <div class="container">
                     <div class="col-lg-12">
                         <h3 class="text-center py-2">Contact-info</h3>
@@ -107,7 +109,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="container pb-0 mt-2">
+                <div class="container pb-0 mt-4">
                     <h3 class="text-center">Follow Us On</h3>
                     <div class="social-icons d-flex justify-content-center align-items-center mt-4">
                         <a class="social-link link d-flex justify-content-center mx-2 py-2" href="#">
@@ -122,17 +124,17 @@
                     </div>
                 </div>
             </div>
-        </div><!-- end row -->
+        </section><!-- end row -->
         <div class="quick-links py-2 pt-4">
             <ul class="d-flex justify-content-center align-items-center">
                 <li class="quick-link mx-3">
-                    <a class="link" href="#">Home</a>
+                    <a class="link" href="#home">Home</a>
                 </li>
                 <li class="quick-link mx-3">
-                    <a class="link" href="#">Products</a>
+                    <a class="link" href="#categories">Products</a>
                 </li>
                 <li class="quick-link mx-3">
-                    <a class="link" href="#">Contact Us</a>
+                    <a class="link" href="#contact">Contact Us</a>
                 </li>
             </ul>
         </div>
